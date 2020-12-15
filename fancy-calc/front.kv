@@ -1,0 +1,888 @@
+#:kivy 1.11.0
+
+<HomeScreen>:
+    GridLayout:
+        cols: 1
+        padding: 20, 20
+        spacing: 20, 20
+        Button:
+            text: "Solwent"
+            on_press: root.solwent()
+        Button:
+            text: "Cyfra"
+            on_press: root.cyfra()
+
+
+<SolwentScreen>:
+    GridLayout:
+        cols: 1
+        padding: 20, 20
+        spacing: 20, 20
+        Button:
+            text: "Roll-Up"
+            on_press: root.roll_up()
+        Button:
+            text: "Banery"
+            on_press: root.banner()
+        Button:
+            text: "Folia"
+            on_press: root.foil()
+        Button:
+            text: "OWV"
+            on_press: root.owv()
+        Button:
+            text: "Plakaty"
+            on_press: root.paper()
+        Button:
+            text: "Cofnij"
+            on_press: root.return_home()
+
+
+<CyfraScreen>:
+    GridLayout:
+        cols: 1
+        padding: 20, 20
+        spacing: 20, 20
+        Button:
+            text: "Wizytówki"
+            on_press: root.business_card()
+        Button:
+            text: "Plakaty"
+            on_press: root.posters()
+        Button:
+            text: "Ulotki"
+            on_press: root.flyers()
+        Button:
+            text: "Ulotki składane"
+            on_press: root.folded_flyers()
+        Button:
+            text: "Ulotki niestandardowe"
+            on_press: root.custom_flyers()
+        Button:
+            text: "Cofnij"
+            on_press: root.return_home()
+
+
+<BusinessCardsScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Wizytówki"
+            TextInput:
+                id: patterns_value
+                hint_text: "Ilość wzorów"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Gramatura"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: paper_weight
+                    text: "350"
+                    values: "350", "Ozdobny"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Zadruk"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: overprint
+                    text: "4+0"
+                    values: "4+0", "4+4"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Foliowanie"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: foil_cards
+                    text: "Brak"
+                    values: "Brak", "1+0", "1+1"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<PostersScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Plakaty"
+            TextInput:
+                id: patterns_value
+                hint_text: "Ilość wzorów"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Wielkość"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: poster_size
+                    text: "A4"
+                    values: "A4", "A3"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Gramatura"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: paper_weight
+                    text: "130"
+                    values: "130", "150", "170", "200", "250", "300", "350", "Ozdobny"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Zadruk"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: overprint
+                    text: "4+0"
+                    values: "4+0", "4+4"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Foliowanie"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: foil_cards
+                    text: "Brak"
+                    values: "Brak", "1+0", "1+1"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<FlyerScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Ulotki"
+            TextInput:
+                id: patterns_value
+                hint_text: "Ilość wzorów"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Wielkość"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: flyer_size
+                    text: "A4"
+                    values: "A4", "A5", "A6", "DL", "14/14 14,5/14,5 15/15"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Gramatura"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: paper_weight
+                    text: "130"
+                    values: "130", "150", "170", "200", "250", "300", "350", "Ozdobny"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Zadruk"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: overprint
+                    text: "4+0"
+                    values: "4+0", "4+4"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Foliowanie"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: foil_cards
+                    text: "Brak"
+                    values: "Brak", "1+0", "1+1"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<FoldedFlyerScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Ulotki Składane"
+            TextInput:
+                id: patterns_value
+                hint_text: "Ilość wzorów"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Składanie"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: fold_flyer
+                    text: "Tylko big"
+                    values: "Tylko big", "Składanie + big"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Wielkość"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: folded_flyer_size
+                    text: "A3 do A4"
+                    values: "A3 do A4", "A4 do A5", "A5 do A6", "A6 do A7", "A4 do DL", "2xDL do DL", "28 do 14", "29 do 14,5, 30 do 15"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Gramatura"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: paper_weight
+                    text: "130"
+                    values: "130", "150", "170", "200", "250", "300", "350", "Ozdobny"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Zadruk"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: overprint
+                    text: "4+0"
+                    values: "4+0", "4+4"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Foliowanie"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: foil_cards
+                    text: "Brak"
+                    values: "Brak", "1+0", "1+1"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<CustomFlyerScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Ulotki Niestandardowe"
+            TextInput:
+                id: length
+                hint_text: "Długość [cm]"
+            TextInput:
+                id: width
+                hint_text: "Szerokość [cm]"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Składanie"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: fold_flyer
+                    text: "Tylko big"
+                    values: "Tylko big", "Składanie + big"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Gramatura"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: paper_weight
+                    text: "130"
+                    values: "130", "150", "170", "200", "250", "300", "350", "Ozdobny"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Zadruk"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: overprint
+                    text: "4+0"
+                    values: "4+0", "4+4"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Foliowanie"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: foil_cards
+                    text: "Brak"
+                    values: "Brak", "1+0", "1+1"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Ilość na arkuszu"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: quantity_per_sheet
+                    text: ""
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+<RollUpScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Roll-Upy"
+            TextInput:
+                id: patterns_value
+                hint_text: "Ilość wzorów"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Wielkość"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: width_thickness
+                    text: "85"
+                    values: "85", "100", "120", "150"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<BannerScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Banery"
+            TextInput:
+                id: length
+                hint_text: "Długość [cm]"
+            TextInput:
+                id: width
+                hint_text: "Szerokość [cm]"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Taśma banerowa"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: tape_banner
+                    text: "Tak"
+                    values: "Tak", "Nie"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Oczka"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: eyelet_banner
+                    text: "Brak"
+                    values: "Brak", "Co 25 cm", "Co 50 cm", "Tylko rogi"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Laminowanie płynem"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: lamination_banner
+                    text: "Tak"
+                    values: "Tak", "Nie"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<FoilScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Folia"
+            TextInput:
+                id: length
+                hint_text: "Długość [cm]"
+            TextInput:
+                id: width
+                hint_text: "Szerokość [cm]"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Laminowanie"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: lamination_foil
+                    text: "Brak"
+                    values: "Brak", "Płyn", "Folia"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<OwvScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "OWV"
+            TextInput:
+                id: length
+                hint_text: "Długość [cm]"
+            TextInput:
+                id: width
+                hint_text: "Szerokość [cm]"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Laminowanie płynem"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: lamination_owv
+                    text: "Tak"
+                    values: "Tak", "Nie"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<PaperScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            size_hint: 0.15, 0.15
+            padding: 20, 20
+            spacing: 20, 20
+            Button:
+                text: "Home Screen"
+                on_press: root.return_home()
+            Button:
+                text: "Cofnij"
+                on_press: root.cyfra()
+        GridLayout:
+            cols: 1
+            padding: 20, 20
+            spacing: 20, 20
+            Label:
+                text: "Plakaty"
+            TextInput:
+                id: quantity
+                hint_text: "Ilość"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Wielkość"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: paper_size
+                    text: "A2"
+                    values: "A2", "A1", "A0", "B2", "B1"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Gramatura"
+                    size_hint: 0.4, 0.4
+                Spinner:
+                    id: paper_weight
+                    text: "150"
+                    values: "150", "200"
+            TextInput:
+                id: margin
+                hint_text: "Marża"
+            Button:
+                text: "Oblicz"
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "Koszt"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost
+                    text: ""
+                Label:
+                    text: "+ marża"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin
+                    text: ""
+                Label:
+                    text: "+ VAT"
+                    size_hint: 0.4, 0.4
+                Label:
+                    id: final_cost_margin_vat
+                    text: ""
+
+
+<RootWidget>:
+    HomeScreen:
+        name: "home_screen"
+    SolwentScreen:
+        name: "solwent_screen"
+    CyfraScreen:
+        name: "cyfra_screen"
+    RollUpScreen:
+        name: "roll_up_screen"
+    BusinessCardsScreen:
+        name: "business_card_screen"
+    PostersScreen:
+        name: "posters_screen"
+    FlyerScreen:
+        name: "flyer_screen"
+    FoldedFlyerScreen:
+        name: "folded_flyer_screen"
+    CustomFlyerScreen:
+        name: "custom_flyer_screen"
+    BannerScreen:
+        name: "banner_screen"
+    FoilScreen:
+        name: "foil_screen"
+    OwvScreen:
+        name: "owv_screen"
+    PaperScreen:
+        name: "paper_screen"
